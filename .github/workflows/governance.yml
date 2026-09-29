@@ -1,0 +1,27 @@
+name: Governance scaffold
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate-starter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate agent starter and architecture metadata
+        run: python3 scripts/validate_starter.py
+      - name: Validate feature task records
+        run: python3 scripts/validate_tasks.py
+      - name: Warn if project verification commands are unconfigured
+        run: |
+          if grep -q '\[CUSTOMIZE\]' docs/engineering/COMMANDS.md; then
+            echo '::warning::Application checks are unconfigured. Set up required CI checks before autonomous development.'
+          fi
+# CUSTOMIZE: add independent lint, tests, build, dependency/security scans,
+# architecture dependency enforcement and release checks as required jobs.
+# Protect main and require these checks plus CODEOWNER review in GitHub rulesets.

@@ -1,0 +1,9 @@
+# Replace @YOUR_GITHUB_USERNAME with real GitHub users or teams.
+# This file only enforces review when branch protection/rulesets require CODEOWNER reviews.
+/AGENTS.md @YOUR_GITHUB_USERNAME
+/agent.md @YOUR_GITHUB_USERNAME
+/CLAUDE.md @YOUR_GITHUB_USERNAME
+/.agents/ @YOUR_GITHUB_USERNAME
+/.github/ @YOUR_GITHUB_USERNAME
+/architecture/ @YOUR_GITHUB_USERNAME
+/docs/engineering/CHANGE_POLICY.md @YOUR_GITHUB_USERNAME
