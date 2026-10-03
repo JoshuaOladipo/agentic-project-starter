@@ -1,0 +1,14 @@
+version: 1
+system:
+  name: "<project-name>"
+  description: "<describe the application>"
+components: []
+dependency_rules: []
+protected_decisions:
+  - new_deployable_service
+  - new_database_or_datastore
+  - new_message_broker
+  - new_external_system_dependency
+  - authentication_or_authorization_architecture
+  - cross_component_data_ownership
+  - bypass_component_boundary
